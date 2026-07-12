@@ -51,10 +51,13 @@
         {% endif %}
       </div>
 
-      <h2
-        class="text-xl font-bold text-gray-900 mb-2 line-clamp-2 hover:text-teal-600 transition"
-      >
-        {{ post['title'] }}
+      <h2 class="text-xl font-bold text-gray-900 mb-2 line-clamp-2 transition">
+        <a
+          href="{{ url_for('post_detail', post_id=post['id']) }}"
+          class="hover:text-teal-600"
+        >
+          {{ post['title'] }}
+        </a>
       </h2>
 
       <p class="text-sm text-gray-600 line-clamp-3 leading-relaxed">

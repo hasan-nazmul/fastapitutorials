@@ -1,0 +1,22 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto bg-white rounded-lg shadow-sm overflow-hidden text-center py-16 px-6">
+	<h1 class="text-6xl font-extrabold text-gray-900">{{ status_code|default('Error') }}</h1>
+	<p class="mt-4 text-xl text-gray-600">{{ detail }}</p>
+
+	{% if detail %}
+	<div class="mt-6 text-left">
+		<h3 class="text-sm font-medium text-gray-700">Details</h3>
+		<pre class="mt-2 whitespace-pre-wrap bg-gray-50 p-4 rounded text-sm text-gray-700">{{ detail }}</pre>
+	</div>
+	{% endif %}
+
+	<div class="mt-8">
+		<a href="{{ url_for('home') }}" class="inline-flex items-center px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700">Back to Dashboard</a>
+	</div>
+</div>
+
+{% endblock %}
+
